@@ -9,5 +9,12 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'piano';
+  title = 'Piano';
+
+  aplicarSonido(numero: number): void{
+    const audio = new Audio();
+    audio.src = '../assets/note' + numero + '.wav';
+    audio.load();
+    audio.play();
+  }
 }
